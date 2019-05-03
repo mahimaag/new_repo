@@ -72,7 +72,7 @@ const auditLogsCommands = {
       .elementText('@eventDetails')
   },
 
-  validateAuditEntry: function (member, category, action, Name, contact='') {
+  validateAuditEntry: function (member, category, action, name, contact='') {
     return this.waitForElementVisible('@auditEntry', category + ' entry is visible')
       .verify.containsText('@linkText', 'Details', 'Link text should be Details')
       .click('@linkText')
@@ -82,7 +82,7 @@ const auditLogsCommands = {
       .verify.containsText('@category', category, 'Category should be ' + category)
       .verify.containsText('@action', action, 'Action should be ' + action)
       .verify.containsText('@linkText', 'Hide Details', 'Link text should be Hide Details')
-      .verify.containsText('@staticField', Name, action + 'ed Event should be ' + Name)
+      .verify.containsText('@staticField', name, action + 'ed Event should be ' + name)
       .elementText('@eventDetails')
   },
 }
