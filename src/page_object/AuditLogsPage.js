@@ -73,7 +73,7 @@ const auditLogsCommands = {
   },
 
   validateAuditEntry: function (member, category, action, name, contact='') {
-    return this.waitForElementVisible('@auditEntry', category + ' entry is visible')
+    return this.waitForElementVisible('@auditEntry', `${category} entry is visible`)
       .verify.containsText('@linkText', 'Details', 'Link text should be Details')
       .click('@linkText')
       .verify.visible('@dateAndTime', 'Date and Time is visible')
